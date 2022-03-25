@@ -13,9 +13,14 @@ body{
 }
 
 h1{
-    color: #ffa500;
+    color: #ffff00;
     text-align: center;
 }
+
+h1:hover{
+    color: #000000;
+}
+
 p{
     color: #0000ff;
     font-family: 'Roboto Mono', monospace;
