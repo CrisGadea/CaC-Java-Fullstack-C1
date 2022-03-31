@@ -1,0 +1,12 @@
+h1{
+    color: #e63946;
+}
+
+div{
+    padding: 10px;
+    border: 15px solid #457b9d;
+    margin: 20px;
+    width: 300px;
+    background-color: #f1faee;
+    outline: 10px solid #a8dadc;
+}
