@@ -1,0 +1,30 @@
+h1{
+    color: #e63946;
+    animation: bounce;
+    animation-duration: 2s;
+}
+
+div{
+    padding: 10px;
+    border: 15px solid #457b9d;
+    margin: 20px;
+    width: 300px;
+    background-color: #f1faee;
+    outline: 10px solid #a8dadc;
+    transition: width 5s;
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    from{
+        background-color: red;
+    }
+    to{
+        background-color: yellow;
+    }
+}
+
+div:hover{
+    width: 250px;
+}
