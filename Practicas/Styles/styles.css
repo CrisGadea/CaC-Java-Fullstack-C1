@@ -1,0 +1,71 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+*{
+    list-style: none;
+    margin: 2px;
+    padding: 0;
+
+}
+header{
+margin: 10px;
+text-align: left;
+
+}
+body{
+background-color: #ccb15a;
+color: #fffdfdf3;
+text-align: center;
+align-content: center;
+}
+
+h1{
+    color:  rgb(39, 99, 230);
+font-size: 54px;
+font-family: 'Rubik Puddles', cursive;
+animation-duration: 4s;
+;
+}
+h2,h3{
+    color: rgb(148, 145, 128);
+font-size: 25px;
+font-family: 'Parisienne', cursive;
+font-weight: 800;
+font-stretch:ultra-expanded;
+}
+h4{ 
+    color: rgb(39, 99, 230);
+    font-size: 30px;
+    font-family: 'Jacques Francois', serif;
+
+}
+h5{
+    color: rgb(250, 243, 201);
+    font-size: 15px;
+    font-style:italic
+}
+
+section{
+    display: flexbox;
+    justify-content: center;
+}
+div{
+    margin: 15px 1px 1px 27.50%;
+    border: 4px solid rgb(248, 227, 110);
+padding: 8px 20px solid #916e23;
+    width: 600px;
+    outline: 7px solid #c07620c9;
+}
+#Logo{
+    text-align: center;
+align-content: center;
+}
+p{
+    font-family: 'Oswald', sans-serif;
+    font-size:x-large;
+}
+#Foto1:hover{
+width: 800; height: 5
+}
