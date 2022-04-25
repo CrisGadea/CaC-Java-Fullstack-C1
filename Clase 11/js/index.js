@@ -98,11 +98,7 @@ function saludar (){
 
 // Llamar a la funcion para ejecutarla
 
-saludar();
-
-saludar();
-
-saludar();
+//saludar();
 
 
 // Funcion con parametros
@@ -114,6 +110,10 @@ function saludarA (nombre) {
 // llamada a la funcion y le damos el valor por parametro
 
 // Le pedimos al usuario que ingrese su nombre
-var nombre1 = prompt("Ingrese su nombre");
+//var nombre1 = prompt("Ingrese su nombre");
 
-saludarA(nombre1);
+//saludarA(nombre1);
+
+
+
+
