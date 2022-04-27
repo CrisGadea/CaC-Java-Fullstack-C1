@@ -28,7 +28,7 @@ function saludar (name) {
 function calcularSiEsMayorDeEdad () {
         edad = 12;
 
-
+     // Creacion de una funcion
         const esMayorDeEdad = (edad) => {
             if (edad >= 18) {
                 console.log("Es mayor");
@@ -37,9 +37,6 @@ function calcularSiEsMayorDeEdad () {
             }
         }
 
-
-
-     // Creacion de una funcion
     // Ejecucion de la funcion
     esMayorDeEdad(edad);
 }
@@ -73,4 +70,5 @@ const hayAlgunElementoMayorQueCuatro = numeros.some(numero => numero > 4);
 console.log(todosLosElementosSonMayoresQue4, hayAlgunElementoMayorQueCuatro);
 
 const sumatoria = numeros.reduce((total, valor) => total + valor, 0);
+
 console.log(sumatoria);
