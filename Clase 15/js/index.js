@@ -1,61 +1,156 @@
-const formulario = document.getElementById("form");
-const userEmail = document.getElementById("email");
-const userPass = document.getElementById("pass");
-const alertSuccess = document.getElementById("alertSuccess");
-const alertEmail = document.getElementById("alertEmail");
-const alertPass = document.getElementById("alertPass");
+/* 
+---------------  Lista de productos a mostrar en la página  -------------------
+    * Array [] de productos ( de formato JSON {} )  // JSON: JavaScript Object Notation
+*/
+const productos = [
+    {
+        id: 1,
+        nombre: "Producto 1",
+        img: "./img/imagen.jpg",
+        precio: 1000,
+        descripcion: "lorem insump 1",
+        stock: 10
+    },
+    {
+        id: 2,
+        nombre: "Producto 2",
+        img: "../img/img.jpg",
+        precio: 2000,
+        descripcion: "lorem insump 2",
+        stock: 20
+    },
+    {
+        id: 3,
+        nombre: "Producto 3",
+        img: "",
+        precio: 3000,
+        descripcion: "lorem insump 3",
+        stock: 30
+    },
+    {
+        id: 4,
+        nombre: "Producto 4",
+        img: "",
+        precio: 4000,
+        descripcion: "lorem insump 4",
+        stock: 40
+    },
+    {
+        id: 5,
+        nombre: "Producto 5",
+        img: "",
+        precio: 5000,
+        descripcion: "lorem insump 5",
+        stock: 50
+    }
+];
 
-const pass = 1234;
-const email = "mail@mail.com";
+// Convertimos el array de objetos en un formato tipo JSON
+const productosEnStorage = JSON.stringify(productos);
+
+// Guardamos en el localstorage el array JSON convertido de productos
+localStorage.setItem("productos", productosEnStorage);
 
 
-const pintarMensajeExito = () => {
-    alertSuccess.classList.remove("d-none");
-    alertSuccess.textContent = "Login Exitoso";
-};
+let productosObtenidosDelStorage = JSON.parse(localStorage.getItem("productos"));
 
-const pintarMensajeError = (errores) => {
-    errores.forEach((item) => {
-        item.tipo.classList.remove("d-none");
-        item.tipo.textContent = item.msg;
+
+const generarcards = (productos) => {
+    // Obtenemos el div que contendra las cards de productos
+    const cards = document.getElementById("products");
+
+    cards.classList = "container-fluid";
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const h3 = document.createElement("h3");
+    h3.className = "card-header";
+
+    const h4 = document.createElement("h4");
+    h4.className = "card-tittle";
+
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body";
+
+    const p = document.createElement("p");
+    p.className = "card-text";
+
+    const button = document.createElement("a");
+    button.className = "btn btn-primary";
+    button.innerText = "Add";
+    button.href = "#";
+
+
+    const total = 0;
+
+    productos.forEach( producto => {
+        total = producto.precio + total;
     });
-};
+
+    localStorage.setItem("precioTotal",total);
+}
 
 
-formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
+//generarcards(productos);
 
-    alertSuccess.classList.add("d-none");
-    const errores = [];
 
-    // validar email
-    if (userEmail.value != email) {
-        userEmail.classList.add("is-invalid");
 
-        errores.push({
-            tipo: alertEmail,
-            msg: "Email Inválido",
-        });
-    } else {
-        userEmail.classList.remove("is-invalid");
-        userEmail.classList.add("is-valid");
-        alertEmail.classList.add("d-none");
-    }
 
-    if (parseInt(userPass.value) != pass) {
-        errores.push({
-            tipo: alertPass,
-            msg: "Contraseña Inválida",
-        });
-    } else {
-        alertPass.classList.add("d-none");
-    }
 
-    if (errores.length !== 0) {
-        pintarMensajeError(errores);
-        return;
-    }
 
-    console.log("Formulario enviado con éxito");
-    pintarMensajeExito();
-});
+let nombre = "Cristian";
+
+let apellido = "Gadea";
+
+var edad = 25;
+
+
+
+// Creamos una funcion que imprime por consola del navegador nombre completo,
+// recibiendo como parámetro el nombre y el apellido
+function mostrarNombreCompleto (nombre1, apellido1) {
+    var nombreCompleto = nombre1 + " " + apellido1;
+
+    console.log(nombreCompleto);
+}
+
+// Para ejecutar la funcion que imprime un nombre completo, la llamamos
+
+//mostrarNombreCompleto(nombre, apellido);
+
+
+// ------------------------------------------- //
+
+// Sobreescribimos los valores de las variables para ejecutar nuevamente la funcion
+nombre = "Jose";
+
+apellido = "Doe";
+
+//mostrarNombreCompleto(nombre, apellido);
+
+nombre = "Cristian";
+
+
+// Estructuras
+
+// Condicionales
+
+/*
+if (nombre == "Cristian" && edad >= 18) {
+    console.log("Bienvenido Cristian, ya sos mayor de edad");
+} else {
+    console.log("Bienvenido " + nombre + ", esperaba un Cristian mayor");
+}
+*/
+
+// Estructura Iterativa (Bucle)
+
+//variale++;  => incrementar el valor de la variable en +1
+
+
+// Bucle for => Repite un codigo tantas veces como le indiquemos en la validacion
+for (let numero = 1; numero <= 10; numero++) {
+    console.log(numero);
+}
+
