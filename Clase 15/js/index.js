@@ -5,6 +5,7 @@ const alertSuccess = document.getElementById("alertSuccess");
 const alertEmail = document.getElementById("alertEmail");
 const alertPass = document.getElementById("alertPass");
 
+// SETEAMOS LOS VALORES DE LOGIN POR DEFECTO
 const pass = 1234;
 const email = "mail@mail.com";
 
@@ -15,17 +16,24 @@ const pintarMensajeExito = () => {
 };
 
 const pintarMensajeError = (errores) => {
+    //RECORREMOS LA LISTA DE ERRORES (ARRAY) => FUNCION FOREACH
     errores.forEach((item) => {
         item.tipo.classList.remove("d-none");
         item.tipo.textContent = item.msg;
     });
+
 };
 
-
+// FUNCION DEL EVENTO SUBMIT CON JS
 formulario.addEventListener("submit", (e) => {
+
+    // SIEMPRE QUE EJECUTAMOS UN EVENTO DESDE JS CON HTML
+    // DEBEMOS INICIALIZAR EL EVENTO
     e.preventDefault();
 
     alertSuccess.classList.add("d-none");
+
+    // GENERAMOS UN ARRAY CON LOS MENSAJES DE ERROR
     const errores = [];
 
     // validar email
