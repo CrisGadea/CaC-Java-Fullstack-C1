@@ -55,14 +55,38 @@ localStorage.setItem("productos", productosEnStorage);
 let productosObtenidosDelStorage = JSON.parse(localStorage.getItem("productos"));
 
 
-const generarcards = (productos) => {
-    // Obtenemos el div que contendra las cards de productos
-    const cards = document.getElementById("products");
-
-    cards.classList = "container-fluid";
-
-    const card = document.createElement("div");
+/**
+     * 
+     * const card = document.createElement("div");
     card.className = "card";
+
+
+    const parrafo = document.createElement("p");
+    parrafo.innerHTML = "Hola";
+
+    card.appendChild(parrafo);
+
+    const products = document.getElementById("products");
+
+    let texto = "${products} "
+
+    // Literales
+
+
+    const divFinal = ` <div class="card"> 
+        <p> Hola </p>
+    </div>`;
+
+    //document.body.appendChild(divFinal);
+
+
+    
+        <div class="card"> 
+          <p> Hola </p>
+         </div>
+     
+
+    products.appendChild(card);
 
     const h3 = document.createElement("h3");
     h3.className = "card-header";
@@ -79,20 +103,63 @@ const generarcards = (productos) => {
     const button = document.createElement("a");
     button.className = "btn btn-primary";
     button.innerText = "Add";
-    button.href = "#";
+    button.href = "#"; */
 
 
-    const total = 0;
+
+
+
+const generarcards = (productos) => {
+    // Obtenemos el div que contendra las cards de productos
+    const cards = document.getElementById("products");
+
+    cards.classList = "container-fluid";
+
+
+    let total = 0;
 
     productos.forEach( producto => {
-        total = producto.precio + total;
+        total += producto.precio;
+
+        let cardProductos = document.createElement("div");
+        cardProductos.className = "card";
+
+        let card = `
+            <img class="card-img-top" src="${producto.img}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">${producto.nombre}</h4>
+                <p class="card-text">
+                    ${producto.descripcion}
+                </p>
+                <p class="card-text">
+                    ${producto.precio}
+                </p>
+                <a href="#!" class="btn btn-primary">Agregar al Carrito</a>
+            </div>
+        `;
+
+        cardProductos.innerHTML = card;
+
+        products.appendChild(cardProductos);
+
+        let precioTotal = document.createElement("p");
+        precioTotal.className = "text-white";
+        precioTotal.innerHTML = total;
+
+        products.appendChild(precioTotal)
+
+        console.log(total)
+
+
     });
 
     localStorage.setItem("precioTotal",total);
+
+    
 }
 
 
-//generarcards(productos);
+generarcards(productos);
 
 
 

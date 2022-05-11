@@ -19,3 +19,8 @@
         }, false)
       })
   })()
+
+
+  const productos = localStorage.getItem("productos");
+
+  

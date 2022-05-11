@@ -1,6 +1,8 @@
 const formulario = document.getElementById("form");
+
 const userEmail = document.getElementById("email");
 const userPass = document.getElementById("pass");
+
 const alertSuccess = document.getElementById("alertSuccess");
 const alertEmail = document.getElementById("alertEmail");
 const alertPass = document.getElementById("alertPass");
@@ -25,11 +27,11 @@ const pintarMensajeError = (errores) => {
 };
 
 // FUNCION DEL EVENTO SUBMIT CON JS
-formulario.addEventListener("submit", (e) => {
+formulario.addEventListener("submit", (evento) => {
 
     // SIEMPRE QUE EJECUTAMOS UN EVENTO DESDE JS CON HTML
     // DEBEMOS INICIALIZAR EL EVENTO
-    e.preventDefault();
+    evento.preventDefault();
 
     alertSuccess.classList.add("d-none");
 
@@ -45,10 +47,24 @@ formulario.addEventListener("submit", (e) => {
             msg: "Email Inválido",
         });
     } else {
-        userEmail.classList.remove("is-invalid");
-        userEmail.classList.add("is-valid");
-        alertEmail.classList.add("d-none");
+        
+        if (userEmail.value.length > 35) {
+            userEmail.classList.add("is-invalid");
+
+            errores.push({
+                tipo: alertEmail,
+                msg: "Cantidad de caracteres supera el limite",
+            });
+        }
+        else{
+            userEmail.classList.remove("is-invalid");
+            userEmail.classList.add("is-valid");
+            alertEmail.classList.add("d-none");
+        }
+        
     }
+
+    // Validamos la contraseña del user
 
     if (parseInt(userPass.value) != pass) {
         errores.push({
@@ -59,7 +75,7 @@ formulario.addEventListener("submit", (e) => {
         alertPass.classList.add("d-none");
     }
 
-    if (errores.length !== 0) {
+    if (errores.length != 0) {
         pintarMensajeError(errores);
         return;
     }
