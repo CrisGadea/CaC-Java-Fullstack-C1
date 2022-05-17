@@ -12,6 +12,22 @@ const pass = 1234;
 const email = "mail@mail.com";
 
 
+// funciones = firma + cuerpo
+
+// Firma: Esta compuesta por: la palabra "function" + nombre de la funcion + parentesis (parametro1, parametro2) => Parametros
+// Ej: function ejemplo (parametro) // ()
+
+// Cuerpo: Esta comprendido entre llaves (bloque de codigo de la funcion) {}
+
+// Creamos la funcion
+
+// Forma tradicional
+// function pintarMensajeExito () {
+//     alertSuccess.classList.remove("d-none");
+//     alertSuccess.textContent = "Login Exitoso";
+// }
+
+// Arrow Function
 const pintarMensajeExito = () => {
     alertSuccess.classList.remove("d-none");
     alertSuccess.textContent = "Login Exitoso";
@@ -81,5 +97,7 @@ formulario.addEventListener("submit", (evento) => {
     }
 
     console.log("Formulario enviado con éxito");
+
+    // Ejecutamos la funcion
     pintarMensajeExito();
 });

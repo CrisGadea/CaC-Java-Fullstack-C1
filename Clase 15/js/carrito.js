@@ -7,6 +7,7 @@
 // Obtenemos los datos del carrito
 let carrito = [];
 
+// Validamos que tenemos datos en el carrito en el storage
 if (localStorage.getItem("Carrito")) {
     carrito = JSON.parse(localStorage.getItem("Carrito"));
 }
